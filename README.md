@@ -4,4 +4,4 @@
 
 Here you can find problem solutions for the following exercises:
 
-1. Inheritance
+1. [Inherirtance](https://github.com/dsapundzhieva/SoftUni-CSharpOOP-June2022/tree/main/Inheritance)
