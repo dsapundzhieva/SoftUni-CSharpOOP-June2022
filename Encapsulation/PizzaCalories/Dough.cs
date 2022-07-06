@@ -2,22 +2,23 @@
 namespace PizzaCalories
 {
     using System;
+    using System.Collections.Generic;
+
     public class Dough
     {
         private const double BaseCkalPerGram = 2.0;
+        private const int minWeight = 1;
+        private const int maxWeight = 200;
 
-        private const double CkalWhiteDoughPerGram = 1.5;
-        private const double CkalWholegrainDoughPerGram = 1.0;
 
-        private const double CkalCrispyTechniquePerGram = 0.9;
-        private const double CkalChewyTechniquePerGram = 1.1;
-        private const double CkalHomemadeTechniquePerGram = 1.0;
-
-        private const string WhiteDough = "white";
-        private const string WholegrainDough = "wholegrain";
-        private const string CrispyDough = "crispy";
-        private const string ChewyDough = "chewy";
-        private const string HommemadeDough = "homemade";
+        private readonly Dictionary<string, double> modifiers = new Dictionary<string, double>()
+        {
+            { "white", 1.5},
+            { "wholegrain", 1.0},
+            { "crispy", 0.9},
+            { "chewy", 1.1},
+            { "homemade", 1.0},
+        };
 
         private string flourType;
         private string bakingTechnique;
@@ -32,10 +33,13 @@ namespace PizzaCalories
 
         public string FlourType
         {
-            get => this.flourType;
+            get
+            {
+                return this.flourType;
+            }
             private set
             {
-                if (value.ToLower() != WhiteDough && value.ToLower() != WholegrainDough)
+                if (!this.modifiers.ContainsKey(value.ToLower()))
                 {
                     throw new ArgumentException(ErrorMessages.DoughInavlidValue);
                 }
@@ -45,10 +49,13 @@ namespace PizzaCalories
 
         public string BakingTechnique
         {
-            get => this.bakingTechnique;
+            get
+            {
+                return this.bakingTechnique;
+            }
             private set
             {
-                if (value.ToLower() != CrispyDough && value.ToLower() != ChewyDough && value.ToLower() != HommemadeDough)
+                if (!this.modifiers.ContainsKey(value.ToLower()))
                 {
                     throw new ArgumentException(ErrorMessages.DoughInavlidValue);
                 }
@@ -58,10 +65,13 @@ namespace PizzaCalories
 
         public int Weight
         {
-            get => this.weight;
+            get
+            {
+                return this.weight;
+            }
             private set
             {
-                if (value < 1 || value > 200)
+                if (value < minWeight || value > maxWeight)
                 {
                     throw new ArgumentException(ErrorMessages.DoughInavlidWeight);
                 }
@@ -70,31 +80,6 @@ namespace PizzaCalories
         }
 
         public double CalculateDoughCaloriesPerGram()
-        {
-            double calories = this.weight * BaseCkalPerGram;
-
-            if (this.bakingTechnique.ToLower() == ChewyDough)
-            {
-                calories *= CkalChewyTechniquePerGram;
-            }
-            else if (this.bakingTechnique.ToLower() == CrispyDough)
-            {
-                calories *= CkalCrispyTechniquePerGram;
-            }
-            else if (this.bakingTechnique.ToLower() == HommemadeDough)
-            {
-                calories *= CkalHomemadeTechniquePerGram;
-            }
-
-            if (this.flourType.ToLower() == WhiteDough)
-            {
-                calories *= CkalWhiteDoughPerGram;
-            }
-            else if (this.flourType.ToLower() == WholegrainDough)
-            {
-                calories *= CkalWholegrainDoughPerGram;
-            }
-            return calories;
-        }
+        => this.weight * BaseCkalPerGram * this.modifiers[FlourType.ToLower()] * this.modifiers[BakingTechnique.ToLower()];
     }
 }

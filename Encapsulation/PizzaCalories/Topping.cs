@@ -7,20 +7,16 @@ namespace PizzaCalories
     public class Topping
     {
         private const double BaseCkalPerGram = 2.0;
-
         private const int MinGramsOfToppings = 1;
         private const int MaxGramsOfToppings = 50;
 
-
-        private const string ToppingMeat = "meat";
-        private const string ToppingVeggie = "veggies";
-        private const string ToppingCheese = "cheese";
-        private const string ToppingSause = "sauce";
-
-        private const double CkalMeatPerGram = 1.2;
-        private const double CkalVeggiesPerGram = 0.8;
-        private const double CkalCheesePerGram = 1.1;
-        private const double CkalSausePerGram = 0.9;
+        Dictionary<string, double> modifiers = new Dictionary<string, double>()
+        {
+            { "meat", 1.2},
+            { "veggies", 0.8},
+            { "cheese", 1.1},
+            { "sauce", 0.9}
+        };
 
         private string toppingType;
         private int weight;
@@ -33,10 +29,13 @@ namespace PizzaCalories
 
         public string ToppingType
         {
-            get => this.toppingType;
+            get
+            {
+                return this.toppingType;
+            }
             private set
             {
-                if (value.ToLower() != ToppingMeat && value.ToLower() != ToppingVeggie && value.ToLower() != ToppingCheese && value.ToLower() != ToppingSause)
+                if (!this.modifiers.ContainsKey(value.ToLower()))
                 {
                     throw new ArgumentException(
                         String.Format(ErrorMessages.ToppingInvalidType, value));
@@ -47,7 +46,10 @@ namespace PizzaCalories
 
         public int Weight
         {
-            get => this.weight;
+            get
+            {
+                return this.weight;
+            }
             private set
             {
                 if (value < MinGramsOfToppings || value > MaxGramsOfToppings)
@@ -60,26 +62,6 @@ namespace PizzaCalories
         }
 
         public double CalculateToppingCaloriesPerGram()
-        {
-            double calories = this.weight * BaseCkalPerGram;
-
-            if (this.toppingType.ToLower() == ToppingMeat)
-            {
-                calories *= CkalMeatPerGram;
-            }
-            else if (this.toppingType.ToLower() == ToppingVeggie)
-            {
-                calories *= CkalVeggiesPerGram;
-            }
-            else if (this.toppingType.ToLower() == ToppingCheese)
-            {
-                calories *= CkalCheesePerGram;
-            }
-            else if (this.toppingType.ToLower() == ToppingSause)
-            {
-                calories *= CkalSausePerGram;
-            }
-            return calories;
-        }
+        => this.weight * BaseCkalPerGram * this.modifiers[ToppingType.ToLower()];
     }
 }
