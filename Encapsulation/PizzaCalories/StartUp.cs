@@ -6,13 +6,12 @@ namespace PizzaCalories
     {
         static void Main(string[] args)
         {
+            var inputPizza = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+            var inputDough = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
             try
             {
-                var pizzaName = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
-                var doughInput = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
-
-                Dough dough = new Dough(doughInput[1], doughInput[2], int.Parse(doughInput[3]));
-                Pizza pizza = new Pizza(pizzaName[1], dough);
+                Dough dough = new Dough(inputDough[1], inputDough[2], int.Parse(inputDough[3]));
+                Pizza pizza = new Pizza(inputPizza[1], dough);
 
                 string command;
 

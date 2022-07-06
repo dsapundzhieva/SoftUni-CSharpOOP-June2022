@@ -3,6 +3,8 @@ namespace PizzaCalories
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
+
     public class Pizza
     {
         private const int minLengthName = 1;
@@ -45,7 +47,7 @@ namespace PizzaCalories
         { 
             get 
             {
-                return this.Dough.CalculateDoughCaloriesPerGram() + GetToppingCalories();
+                return this.Dough.CalculateDoughCaloriesPerGram() + toppings.Sum(s => s.CalculateToppingCaloriesPerGram());
             }
         }
 
@@ -56,16 +58,6 @@ namespace PizzaCalories
                 throw new ArgumentException(ErrorMessages.ToppingInvalidValue);
             }
             this.toppings.Add(topping);
-        }
-        
-        private double GetToppingCalories()
-        {
-            double calories = 0;
-            foreach (var topping in this.toppings)
-            {
-                calories += topping.CalculateToppingCaloriesPerGram();
-            }
-            return calories;
         }
     }
 }
