@@ -10,7 +10,7 @@ namespace PizzaCalories
         private const int MinGramsOfToppings = 1;
         private const int MaxGramsOfToppings = 50;
 
-        Dictionary<string, double> modifiers = new Dictionary<string, double>()
+        private readonly Dictionary<string, double> modifiers = new Dictionary<string, double>()
         {
             { "meat", 1.2},
             { "veggies", 0.8},
