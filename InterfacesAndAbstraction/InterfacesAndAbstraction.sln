@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapes", "Shapes\Shapes.csproj", "{B8840F3F-F407-4071-9CE8-68570633B02C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cars", "Cars\Cars.csproj", "{BB424AFB-6DF7-4103-8BA4-BDCCC0F41EC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonInfo", "PersonInfo\PersonInfo.csproj", "{3125428E-EB0E-43E2-88A5-B6059BE344D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8840F3F-F407-4071-9CE8-68570633B02C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8840F3F-F407-4071-9CE8-68570633B02C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8840F3F-F407-4071-9CE8-68570633B02C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8840F3F-F407-4071-9CE8-68570633B02C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB424AFB-6DF7-4103-8BA4-BDCCC0F41EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB424AFB-6DF7-4103-8BA4-BDCCC0F41EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB424AFB-6DF7-4103-8BA4-BDCCC0F41EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB424AFB-6DF7-4103-8BA4-BDCCC0F41EC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3125428E-EB0E-43E2-88A5-B6059BE344D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3125428E-EB0E-43E2-88A5-B6059BE344D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3125428E-EB0E-43E2-88A5-B6059BE344D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3125428E-EB0E-43E2-88A5-B6059BE344D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D93242D-6E26-47C6-A9E4-7E7CDDD3FA77}
+	EndGlobalSection
+EndGlobal
