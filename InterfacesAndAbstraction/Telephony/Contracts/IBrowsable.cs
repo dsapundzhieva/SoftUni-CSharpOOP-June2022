@@ -1,9 +1,9 @@
-﻿namespace Telephony
+﻿namespace Telephony.Contracts
 {
     using System.Collections.Generic;
 
     public interface IBrowsable
     {
-        string Browse(string website);
+        string Browse(string url);
     }
 }
