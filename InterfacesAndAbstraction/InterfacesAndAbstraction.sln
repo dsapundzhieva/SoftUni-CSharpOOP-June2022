@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapes", "Shapes\Shapes.csproj", "{B8840F3F-F407-4071-9CE8-68570633B02C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shapes", "Shapes\Shapes.csproj", "{B8840F3F-F407-4071-9CE8-68570633B02C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cars", "Cars\Cars.csproj", "{BB424AFB-6DF7-4103-8BA4-BDCCC0F41EC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cars", "Cars\Cars.csproj", "{BB424AFB-6DF7-4103-8BA4-BDCCC0F41EC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonInfo", "PersonInfo\PersonInfo.csproj", "{3125428E-EB0E-43E2-88A5-B6059BE344D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonInfo", "PersonInfo\PersonInfo.csproj", "{3125428E-EB0E-43E2-88A5-B6059BE344D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telephony", "Telephony\Telephony.csproj", "{89A2E639-92D1-4BFE-838A-CE6CE61E932B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telephony", "Telephony\Telephony.csproj", "{89A2E639-92D1-4BFE-838A-CE6CE61E932B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BorderControl", "BorderControl\BorderControl.csproj", "{6CFDAC71-F774-4E55-BB08-C0F60FAC6D3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{89A2E639-92D1-4BFE-838A-CE6CE61E932B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89A2E639-92D1-4BFE-838A-CE6CE61E932B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89A2E639-92D1-4BFE-838A-CE6CE61E932B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CFDAC71-F774-4E55-BB08-C0F60FAC6D3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CFDAC71-F774-4E55-BB08-C0F60FAC6D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CFDAC71-F774-4E55-BB08-C0F60FAC6D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CFDAC71-F774-4E55-BB08-C0F60FAC6D3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
