@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MilitaryElite.Models
 {
-    internal class Engineer
+    internal class Engineer : SpecialisedSoldier
     {
     }
 }

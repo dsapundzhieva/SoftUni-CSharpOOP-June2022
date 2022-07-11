@@ -1,0 +1,8 @@
+Calling... 0882134215
+Calling... 0882134333
+Calling... 0899213421
+Dialing... 0558123
+Dialing... 3333123
+Browsing: http://softuni.bg!
+Browsing: http://youtube.com!
+Invalid URL!

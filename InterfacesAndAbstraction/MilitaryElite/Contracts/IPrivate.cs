@@ -7,6 +7,6 @@ namespace MilitaryElite.Contracts
 
     internal interface IPrivate : ISoldier
     {
-        decimal Salary { get; set; }
+        decimal Salary { get; }
     }
 }

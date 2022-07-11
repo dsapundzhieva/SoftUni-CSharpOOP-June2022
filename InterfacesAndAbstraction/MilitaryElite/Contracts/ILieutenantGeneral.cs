@@ -6,6 +6,6 @@ namespace MilitaryElite.Contracts
 
     internal interface ILieutenantGeneral : IPrivate
     {
-        IReadOnlyCollection<IPrivate> Privates { get; set; }
+        IReadOnlyCollection<IPrivate> Privates { get; }
     }
 }

@@ -3,59 +3,51 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using Telephony.IO.Interfaces;
     using Telephony.Models;
-    public class Engine
+    public class Engine : IEngine
     {
-        private Smartphone smartphone;
-        private IList<string> phoneNumbers;
-        private IList<string> urls;
+        private readonly IReader reader;
+        private readonly IWriter writer;
+
+        private readonly Smartphone smartphone;
+        private readonly StationaryPhone stationaryPhone;
 
         public Engine()
         {
             this.smartphone = new Smartphone();
-            this.phoneNumbers = new List<string>();
-            this.urls = new List<string>();
+            this.stationaryPhone = new StationaryPhone();
         }
 
-        public void Run()
+        public Engine(IReader reader, IWriter writer)
+            :this()
         {
-            this.phoneNumbers = Console.ReadLine().Split().ToList();
-            this.urls = Console.ReadLine().Split().ToList();
-
-            CallPhoneNumbers();
-            BrowseUrls();
-
+            this.reader = reader;
+            this.writer = writer;
         }
 
-        private void BrowseUrls()
-        {
-            foreach (var url in urls)
-            {
-                try
-                {
-                    Console.WriteLine(this.smartphone.Browse(url));
-                }
-                catch (Exception ae)
-                {
 
-                    Console.WriteLine(ae.Message);
-                }
-            }
-        }
-
-        private void CallPhoneNumbers()
+        public void Start()
         {
+            
+            string[] phoneNumbers = this.reader.ReadLine().Split().ToArray();
+            string[] urls = this.reader.ReadLine().Split().ToArray();
+
             foreach (var number in phoneNumbers)
             {
-                try
+                if (number.Length == 7)
                 {
-                    Console.WriteLine(this.smartphone.Call(number));
+                    this.writer.WriteLine(stationaryPhone.Call(number));
                 }
-                catch (Exception ae)
+                else if (number.Length == 10)
                 {
+                    this.writer.WriteLine(smartphone.Call(number));
+                }
+            }
 
-                    Console.WriteLine(ae.Message);
-                }
+            foreach (var url in urls)
+            {
+                this.writer.WriteLine(smartphone.Browse(url));
             }
         }
     }

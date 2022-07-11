@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace MilitaryElite.Models
+﻿namespace MilitaryElite.Models
 {
-    internal class Corps
+    public enum Corps
     {
+        Airforces,
+        Marines
     }
 }

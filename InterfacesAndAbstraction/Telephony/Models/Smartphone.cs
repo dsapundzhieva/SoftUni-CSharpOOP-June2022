@@ -11,19 +11,24 @@
     {
         public string Call(string number)
         {
-            if (!number.All(c => char.IsDigit(c)))
+            foreach (char num in number)
             {
-                throw new ArgumentException(ExceptionMessages.InvalidNumberException);
+                if (!char.IsDigit(num))
+                {
+                    return "Invalid number!";
+                }
             }
-            return number.Length > 7 ? $"Calling... {number}"
-                : $"Dialing... {number}";
+            return $"Calling... {number}";
         }
 
         public string Browse(string url)
         {
-            if (url.Any(c => char.IsDigit(c)))
+            foreach (char website in url)
             {
-                throw new ArgumentException(ExceptionMessages.InvalidUrlException);
+                if (char.IsDigit(website))
+                {
+                    return "Invalid URL!";
+                }
             }
             return $"Browsing: {url}!";
         }
