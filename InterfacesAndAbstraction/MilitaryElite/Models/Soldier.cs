@@ -1,61 +1,23 @@
 ﻿namespace MilitaryElite.Models
 {
     using MilitaryElite.Contracts;
-    using System;
+
     public class Soldier : ISoldier
     {
-        string id;
-        string firstName;
-        string lastName;
-
-        public Soldier(string firstName, string lastName, string id)
+        public Soldier(string firstName, string lastName, int id)
         {
             this.Id = id;
             this.FirstName = firstName;
             this.LastName = lastName;
         }
 
-        public string Id
+        public int Id { get; }
+        public string FirstName { get; }
+        public string LastName { get; }
+
+        public override string ToString()
         {
-            get
-            {
-                return this.id;
-            }
-            private set
-            {
-                if (!string.IsNullOrWhiteSpace(value))
-                {
-                    this.id = value;
-                }
-            }
-        }
-        public string FirstName 
-        {
-            get
-            {
-                return this.firstName;
-            }
-            private set
-            {
-                if (!string.IsNullOrWhiteSpace(value))
-                {
-                    this.firstName = value;
-                }
-            }
-        }
-        public string LastName
-        {
-            get
-            {
-                return this.lastName;
-            }
-            private set
-            {
-                if (!string.IsNullOrWhiteSpace(value))
-                {
-                    this.lastName = value;
-                }
-            }
+            return $"Name: {this.FirstName} {this.LastName} Id: {this.Id}";
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace MilitaryElite.Models
+﻿namespace MilitaryElite.Enums
 {
     public enum Corps
     {

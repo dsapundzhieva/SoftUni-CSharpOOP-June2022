@@ -2,31 +2,20 @@
 namespace MilitaryElite.Models
 {
     using MilitaryElite.Contracts;
+
     public class Private : Soldier, IPrivate
     {
-        private decimal salary;
-
-        public Private(string firstName, string lastName, string id, decimal salary)
+        public Private(string firstName, string lastName, int id, decimal salary)
             : base(firstName, lastName, id)
         {
             this.Salary = salary;
         }
 
-        public decimal Salary
+        public decimal Salary { get; }
+
+        public override string ToString()
         {
-            get
-            {
-                return this.salary;
-            }
-            set
-            {
-                if (value >= 0)
-                {
-                    this.salary = value;
-                }
-            }
+            return base.ToString() + $" Salary: {this.Salary:f2}";
         }
-
-
     }
 }

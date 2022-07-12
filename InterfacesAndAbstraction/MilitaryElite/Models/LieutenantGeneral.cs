@@ -1,19 +1,35 @@
 ﻿
 namespace MilitaryElite.Models
 {
-    using MilitaryElite.Contracts;
+    using System.Text;
+
     using System.Collections.Generic;
+
+    using MilitaryElite.Contracts;
+
     public class LieutenantGeneral : Private, ILieutenantGeneral
     {
-        private readonly List<Private> privates;
-
-        public LieutenantGeneral(string firstName, string lastName, string id, decimal salary) 
+        public LieutenantGeneral(string firstName, string lastName, int id, decimal salary, Dictionary<int, IPrivate> privates) 
             : base(firstName, lastName, id, salary)
         {
-            this.privates = new List<Private>();
+            this.Privates = privates;
         }
 
+        public Dictionary<int, IPrivate> Privates { get; }
 
-        IReadOnlyCollection<IPrivate> ILieutenantGeneral.Privates => this.privates;
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(base.ToString());
+            sb.AppendLine("Privates:");
+
+            foreach (var item in this.Privates)
+            {
+                sb.AppendLine($"  {item.Value}");
+            }
+                
+            return sb.ToString().TrimEnd();
+        }
     }
 }
