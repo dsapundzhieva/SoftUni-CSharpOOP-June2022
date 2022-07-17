@@ -1,14 +1,18 @@
 ﻿namespace WildFarm.Core
 {
-    using Factories.Interfaces;
     using System;
+    using Factories.Interfaces;
     using System.Collections.Generic;
     using Models.Animals;
     using Models.Foods;
     using Exceptions;
+    using IO.Interfaces;
 
     public class Engine : IEngine
     {
+        private readonly IReader reader;
+        private readonly IWriter writer;
+
         private readonly IFoodFactory foodFactory;
         private readonly IAnimalFactory animalFactory;
 
@@ -19,31 +23,33 @@
             this.animals = new List<Animal>();
         }
 
-        public Engine(IFoodFactory foodFactory, IAnimalFactory animalFactory)
+        public Engine(IFoodFactory foodFactory, IAnimalFactory animalFactory, IReader reader, IWriter writer)
             :this()
         {
             this.foodFactory = foodFactory;
             this.animalFactory = animalFactory;
+            this.reader = reader;
+            this.writer = writer;
         }
 
         public void Start()
         {
             string command;
 
-            while ((command = Console.ReadLine()) != "End")
+            while ((command = reader.ReadLine()) != "End")
             {
                 try
                 {
                     string[] animalInfo = command
                    .Split();
 
-                    string[] foodInfo = Console.ReadLine()
+                    string[] foodInfo = reader.ReadLine()
                         .Split();
 
                     Animal animal = BuildAnimalUsingFactory(animalInfo);
                     Food food = foodFactory.CreateFoodFactory(foodInfo[0], int.Parse(foodInfo[1]));
 
-                    Console.WriteLine(animal.ProduceSound());
+                    writer.WriteLine(animal.ProduceSound());
 
                     this.animals.Add(animal);
 
@@ -51,21 +57,21 @@
                 }
                 catch (InvalidFactoryTypeException ifte)
                 {
-                    Console.WriteLine(ifte.Message);
+                    writer.WriteLine(ifte.Message);
                 }
                 catch (InvalidTypeOfFood itof)
                 {
-                    Console.WriteLine(itof.Message);
+                    writer.WriteLine(itof.Message);
                 }
                 catch (ArgumentException ae)
                 {
-                    Console.WriteLine(ae.Message);
+                    writer.WriteLine(ae.Message);
                 }
             }
 
             foreach (var animal in animals)
             {
-                Console.WriteLine(animal);
+                writer.WriteLine(animal.ToString());
             }
             
         }
