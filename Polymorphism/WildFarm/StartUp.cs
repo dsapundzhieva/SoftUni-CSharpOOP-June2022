@@ -13,10 +13,13 @@
             IReader reader = new ConsoleReader();
             IWriter writer = new ConsoleWriter();
 
+            IReader fileReader = new FileReader("../../../readData.txt");
+            IWriter fileWriter = new FileWriter("../../../resultData.txt");
+
             IAnimalFactory animalFactory = new AnimalFactory();
             IFoodFactory foodFactory = new FoodFactory();
 
-            IEngine engine = new Engine(foodFactory, animalFactory, reader, writer);
+            IEngine engine = new Engine(foodFactory, animalFactory, fileReader, fileWriter);
 
             engine.Start();
         }
