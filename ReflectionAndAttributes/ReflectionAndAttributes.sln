@@ -5,7 +5,11 @@ VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stealer", "Stealer\Stealer.csproj", "{6BAE5986-1D2B-4EA5-B837-E1BC52640D47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorProblem", "AuthorProblem\AuthorProblem.csproj", "{F91D2D40-0E69-40F8-A7DF-CB2585FC2B11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorProblem", "AuthorProblem\AuthorProblem.csproj", "{F91D2D40-0E69-40F8-A7DF-CB2585FC2B11}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandPattern", "CommandPattern\CommandPattern.csproj", "{00F42EA6-294B-42D9-AE52-5056D605C6BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidationAttributes", "ValidationAttributes\ValidationAttributes.csproj", "{E81F59CB-0F81-474B-8842-17ACCA6119AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{F91D2D40-0E69-40F8-A7DF-CB2585FC2B11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F91D2D40-0E69-40F8-A7DF-CB2585FC2B11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F91D2D40-0E69-40F8-A7DF-CB2585FC2B11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00F42EA6-294B-42D9-AE52-5056D605C6BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00F42EA6-294B-42D9-AE52-5056D605C6BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00F42EA6-294B-42D9-AE52-5056D605C6BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00F42EA6-294B-42D9-AE52-5056D605C6BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E81F59CB-0F81-474B-8842-17ACCA6119AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E81F59CB-0F81-474B-8842-17ACCA6119AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E81F59CB-0F81-474B-8842-17ACCA6119AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E81F59CB-0F81-474B-8842-17ACCA6119AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
