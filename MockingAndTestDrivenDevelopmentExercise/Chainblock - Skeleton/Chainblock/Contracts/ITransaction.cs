@@ -12,6 +12,6 @@
 
         string To { get; set; }
 
-        double Amount { get; set; }
+        decimal Amount { get; set; }
     }
 }

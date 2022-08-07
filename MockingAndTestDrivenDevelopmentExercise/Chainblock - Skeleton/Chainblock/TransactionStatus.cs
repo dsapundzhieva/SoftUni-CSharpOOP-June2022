@@ -3,7 +3,7 @@
     public enum TransactionStatus
     {
         Failed,
-        Successfull,
+        Successful,
         Aborted,
         Unauthorized
     }

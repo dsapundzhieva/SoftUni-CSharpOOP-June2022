@@ -30,12 +30,12 @@
 
         IEnumerable<ITransaction> GetByReceiverOrderedByAmountThenById(string receiver);
 
-        IEnumerable<ITransaction> GetByTransactionStatusAndMaximumAmount(TransactionStatus status, double amount);
+        IEnumerable<ITransaction> GetByTransactionStatusAndMaximumAmount(TransactionStatus status, decimal amount);
 
-        IEnumerable<ITransaction> GetBySenderAndMinimumAmountDescending(string sender, double amount);
+        IEnumerable<ITransaction> GetBySenderAndMinimumAmountDescending(string sender, decimal amount);
 
-        IEnumerable<ITransaction> GetByReceiverAndAmountRange(string receiver, double lo, double hi);
+        IEnumerable<ITransaction> GetByReceiverAndAmountRange(string receiver, decimal lo, decimal hi);
 
-        IEnumerable<ITransaction> GetAllInAmountRange(double lo, double hi);
+        IEnumerable<ITransaction> GetAllInAmountRange(decimal lo, decimal hi);
     }
 }
