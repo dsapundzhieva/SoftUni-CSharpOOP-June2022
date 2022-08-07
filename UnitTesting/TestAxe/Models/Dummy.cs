@@ -1,6 +1,7 @@
 ﻿using System;
+using TestAxe.Interfaces;
 
-public class Dummy
+public class Dummy : ITarget
 {
     private int health;
     private int experience;
@@ -14,6 +15,11 @@ public class Dummy
     public int Health 
     {
         get { return this.health; }
+    }
+
+    public int Experience
+    {
+        get { return this.experience; }
     }
 
     public void TakeAttack(int attackPoints)
