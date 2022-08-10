@@ -36,8 +36,7 @@ namespace OnlineShop.Models.Products.Computers
         public override decimal Price => price + this.components.Select(c => c.Price).Sum() + this.peripherals.Select(p => p.Price).Sum();
         public void AddComponent(IComponent component)
         {
-          
-            if (this.components.Any(c => c.GetType().Name == component.GetType().Name))
+            if (this.components.GetType().Name == component.GetType().Name)
             {
                 throw new ArgumentException($"Component {component.GetType().Name} already exists in {this.GetType().Name} with Id {this.Id}.");
             }
@@ -58,7 +57,7 @@ namespace OnlineShop.Models.Products.Computers
 
         public void AddPeripheral(IPeripheral peripheral)
         {
-            if (this.peripherals.Any(c => c.GetType().Name == peripheral.GetType().Name))
+            if (this.peripherals.GetType().Name == peripheral.GetType().Name)
             {
                 throw new ArgumentException($"Peripheral {peripheral.GetType().Name} already exists in {this.GetType().Name} with Id {this.Id}.");
             }

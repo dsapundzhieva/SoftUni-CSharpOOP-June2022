@@ -17,7 +17,7 @@ namespace OnlineShop.Core
             this.reader = reader;
             this.writer = writer;
             this.commandInterpreter = commandInterpreter;
-            this.controller = controller;
+            this.controller = new Controller();
         }
 
         public void Run()

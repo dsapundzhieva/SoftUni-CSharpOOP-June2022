@@ -92,7 +92,7 @@ namespace OnlineShop.Core
 
             if (this.peripherals.Any(c => c.Id == id))
             {
-                throw new ArgumentException($"Peripheral with this id already exists.");
+                throw new ArgumentException($"Peripheral with this {id} already exists.");
             }
 
             IPeripheral peripheral = peripheralType switch
@@ -148,7 +148,7 @@ namespace OnlineShop.Core
 
             if (computerWithHigestPerformance == null || computerWithHigestPerformance.Price > budget)
             {
-                throw new ArgumentException($"Can't buy a computer with a budget of ${budget}.");
+                throw new ArgumentException($" Can't buy a computer with a budget of ${budget}.");
             }
 
             this.computers.Remove(computerWithHigestPerformance);
